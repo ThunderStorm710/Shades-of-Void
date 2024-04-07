@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     private string isCrouchingParam = "isCrouching";
 
     private bool facingRight = true;
+
+    public bool hasPotion = false;
+    public bool hasPickaxe = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -35,10 +39,8 @@ public class PlayerController : MonoBehaviour
         animate = gameObject.GetComponent<Animator>();
 
         moveSpeed = 1f;
-        jumpForce = 30f;
+        jumpForce = 20f;
         isJumping = false;
-
-
 
     }
 
@@ -101,10 +103,26 @@ public class PlayerController : MonoBehaviour
              animate.SetBool(isInteractingParam, false);
         }
 
-        
+    }
 
+    public void ObtainObject(GameObject obj)
+    {
+        // Verifica a tag do objeto para determinar o tipo.
+        if (obj.tag == "Potion")
+        {
+            hasPotion = true;
+            Debug.Log("Potion coletada!");
+        }
+        // Adicione mais condições conforme necessário para outros tipos de objetos.
+    }
 
-
+    public void ObtainPickaxe(GameObject obj)
+    {
+        if (obj.tag == "Axe")
+        {
+        hasPickaxe = true;
+        Debug.Log("Picareta obtida!");
+        }
     }
 
     void FixedUpdate()

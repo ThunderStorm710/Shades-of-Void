@@ -6,29 +6,42 @@ public class ObjectController : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool isPlayerInRange = false;
-    private Animator playerAnimator; // Referência ao Animator do jogador
+    private Animator playerAnimator; 
+    private GameObject player;
+    private Inventory inventory;
+    public GameObject itemButton;
 
-    private InventoryManager inventoryManager;
-
-   // public Sprite itemSprite; // A imagem do item a ser exibida na UI
-   // public Image itemSlotUI; // A referência ao slot na UI onde o item será exibido
 
 
     void Start()
     {
-        // Encontre o GameObject do jogador e obtenha o componente Animator
-        // Supõe-se que este script esteja anexado à chave e o jogador tenha a tag "Player"
-        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        //inventoryManager = FindObjectOfType<InventoryManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null){
+            playerAnimator = player.GetComponent<Animator>();
+            inventory = player.GetComponent<Inventory>();
+        }
+
 
     }
 
 
     void Update()
     {
-        // Verifica se o jogador está na área e se a tecla "E" foi pressionada
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                if (inventory.isFull[i] == false)
+                {
+                    inventory.isFull[i] = true;
+                    Instantiate(itemButton, inventory.slots[i].transform, false);
+                    player.GetComponent<PlayerController>().ObtainObject(gameObject);
+                    player.GetComponent<PlayerController>().ObtainPickaxe(gameObject);
+
+                    Destroy(gameObject);
+                    break;
+                }
+            }
             PlayerPickUp();
         }
     }
@@ -38,7 +51,18 @@ public class ObjectController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
+
+            if (collision.GetComponent<PlayerController>().hasPickaxe){
+                Debug.Log("Parede desaparecendo.");
+                gameObject.SetActive(false); // Faz a parede desaparecer
+            } else {
+                Debug.Log("Falta a picareta.");
+   
+            }
+
         }
+
+
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -48,22 +72,18 @@ public class ObjectController : MonoBehaviour
             isPlayerInRange = false;
         }
     }
+    
 
     void PlayerPickUp()
     {
-        // Ativa a animação de pegar
         playerAnimator.SetTrigger("isObject");
 
-        // Você pode querer desativar a animação depois de um curto período, dependendo de como sua animação é configurada
-        Invoke("ResetPickUpAnimation", 1.0f); // Ajuste o tempo conforme necessário
-        //inventoryManager.AddItemToInventory();
-        // Lógica para pegar o objeto, por exemplo, destruí-lo
+        Invoke("ResetPickUpAnimation", 1.0f);
         Destroy(gameObject);
     }
 
     void ResetPickUpAnimation()
     {
-        // Reseta o parâmetro de animação para voltar ao estado normal
         playerAnimator.SetBool("IsPickingUp", false);
     }
 }
