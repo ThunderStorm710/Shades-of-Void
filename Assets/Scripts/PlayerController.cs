@@ -28,9 +28,11 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
 
     public bool hasPotion = false;
+    public bool hasCore = false;
     public bool hasPickaxe = false;
+    public bool hasAxe = false;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,15 +115,23 @@ public class PlayerController : MonoBehaviour
             hasPotion = true;
             Debug.Log("Potion coletada!");
         }
-        // Adicione mais condições conforme necessário para outros tipos de objetos.
-    }
 
-    public void ObtainPickaxe(GameObject obj)
-    {
+        if (obj.tag == "Core")
+        {
+            hasCore = true;
+            Debug.Log("Core coletado!");
+        }
+
+        if (obj.tag == "PickAxe")
+        {
+            hasPickaxe = true;
+            Debug.Log("Picareta obtida!");
+        }
+
         if (obj.tag == "Axe")
         {
-        hasPickaxe = true;
-        Debug.Log("Picareta obtida!");
+            hasAxe = true;
+            Debug.Log("Axe obtido!");
         }
     }
 

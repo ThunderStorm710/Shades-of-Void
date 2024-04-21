@@ -8,6 +8,12 @@ TagManager:
   - Object
   - Potion
   - Axe
+  - Core
+  - PickAxe
+  - Wall
+  - Wood Wall
+  - Audio
+  - Worlds
   layers:
   - Default
   - TransparentFX

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    // Start is called before the first frame update
     private bool isPlayerInRange = false;
     private Animator playerAnimator; 
+
     private GameObject player;
-    private Inventory inventory;
     public GameObject itemButton;
+
+    private Inventory inventory;
+
 
 
 
@@ -27,22 +29,52 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
+
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            for (int i = 0; i < inventory.slots.Length; i++)
-            {
-                if (inventory.isFull[i] == false)
-                {
-                    inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
-                    player.GetComponent<PlayerController>().ObtainObject(gameObject);
-                    player.GetComponent<PlayerController>().ObtainPickaxe(gameObject);
 
-                    Destroy(gameObject);
-                    break;
-                }
+            PlayerController playerController = player.GetComponent<PlayerController>();
+
+            if (playerController.hasPickaxe && gameObject.tag == "Wall")
+            {
+                Debug.Log("Parede a desaparecer.");
+                gameObject.SetActive(false);
+                player.GetComponent<PlayerController>().hasPickaxe = false;
+                inventory.RemoveItem("Pickaxe");
+
+
             }
-            PlayerPickUp();
+            else if (playerController.hasAxe && gameObject.tag == "Wood Wall") {
+                Debug.Log("Parede de madeira a desaparecer.");
+                gameObject.SetActive(false);
+                player.GetComponent<PlayerController>().hasAxe = false;
+                inventory.RemoveItem("Axe");
+
+
+            }
+            else if (gameObject.tag == "Wall") {
+                Debug.Log("Falta a picareta.");
+
+            } else if (gameObject.tag == "Wood Wall") {
+                Debug.Log("Falta a machado.");
+            }
+
+            if (gameObject.tag != "Wall" && gameObject.tag != "Wood Wall") { 
+
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.isFull[i] == false)
+                    {
+                        inventory.AddItem(itemButton, gameObject.name);
+                        player.GetComponent<PlayerController>().ObtainObject(gameObject);
+
+                        Destroy(gameObject);
+                        break;
+                    }
+                }
+                PlayerPickUp();
+            }
+            
         }
     }
 
@@ -52,17 +84,7 @@ public class ObjectController : MonoBehaviour
         {
             isPlayerInRange = true;
 
-            if (collision.GetComponent<PlayerController>().hasPickaxe){
-                Debug.Log("Parede desaparecendo.");
-                gameObject.SetActive(false); // Faz a parede desaparecer
-            } else {
-                Debug.Log("Falta a picareta.");
-   
-            }
-
         }
-
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
