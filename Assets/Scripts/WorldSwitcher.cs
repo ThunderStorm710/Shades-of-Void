@@ -51,7 +51,7 @@ IEnumerator SwitchWorldCoroutine()
     //animator.SetInteger("Perspective", currentWorld);
     //animator.SetBool("IsAnimating", true);
 
-    yield return new WaitForSeconds(1); // Espera a animação completar
+    yield return new WaitForSeconds(0.5f); // Espera a animação completar
     //animator.SetBool("IsAnimating", false);
     if (oldWorld == 0){
     animation.Play("Trans1");
@@ -95,6 +95,8 @@ IEnumerator SwitchWorldCoroutine()
         currentWorld = worldIndex;
         worlds[currentWorld].SetActive(true);
     }
+
+    
 
 
     void SaveCurrentPosition()

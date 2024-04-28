@@ -25,9 +25,6 @@ public class VolumeSettings : MonoBehaviour
             SetVolumeMusic();
             SetVolumeSFX();
         }
-
-        Debug.Log("Fez o Start");
-
     }
 
     public void SetSoundVolume()

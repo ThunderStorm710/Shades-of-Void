@@ -12,9 +12,15 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip background;
     public AudioClip death;
-    public AudioClip checkpoint;
+    //public AudioClip checkpoint;
     public AudioClip portalIn;
-    public AudioClip portalOut;
+    public AudioClip running;
+    public AudioClip jumpLand;
+    public AudioClip jumpSound;
+    public AudioClip itemEquipment;
+    public AudioClip axeSound;
+    public AudioClip pickaxeSound;
+
 
     // Start is called before the first frame update
     void Start()

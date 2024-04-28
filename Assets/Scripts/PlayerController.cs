@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,16 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     private float jumpForce;
     private bool isJumping;
+    private bool isGrounded;
+
     private float moveHorizontal;
     private float moveVertical;
     private float health;
 
+
+
+    private bool isPickaxeHit = false;
+    private bool isAxeHit = false;
 
     private bool isCrouching = false;
     private bool isInteracting = false;
@@ -32,6 +39,9 @@ public class PlayerController : MonoBehaviour
     public bool hasPickaxe = false;
     public bool hasAxe = false;
 
+    private AudioManager audioManager;
+    private AudioSource runningSoundSource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +54,12 @@ public class PlayerController : MonoBehaviour
         jumpForce = 20f;
         isJumping = false;
 
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+
+        runningSoundSource = gameObject.AddComponent<AudioSource>();
+        runningSoundSource.clip = audioManager.running;
+        runningSoundSource.loop = true; // Faz o som repetir automaticamente
     }
 
     // Update is called once per frame
@@ -61,6 +77,16 @@ public class PlayerController : MonoBehaviour
         } else if (moveHorizontal < 0 && facingRight)
         {
             Flip();
+        }
+
+        if (Mathf.Abs(moveHorizontal) > 0.1f && !runningSoundSource.isPlaying)
+        {
+            runningSoundSource.Play();
+        }
+        else if (Mathf.Abs(moveHorizontal) < 0.1f && runningSoundSource.isPlaying)
+        {
+            // Parar o som de corrida quando o personagem parar de se mover
+            runningSoundSource.Stop();
         }
 
         ControlJumpAnimation();
@@ -94,16 +120,10 @@ public class PlayerController : MonoBehaviour
             animate.SetBool("isWalking", false); 
         }        
 
-        if (Input.GetKeyDown(KeyCode.G)){ //ISTO SERVE SÓ DE DEBUG
+        /*if (Input.GetKeyDown(KeyCode.G)){ //ISTO SERVE SÓ DE DEBUG
             Debug.Log("COLLECTIBLE...");
             animate.SetTrigger(isCollectible);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E)){
-            animate.SetBool(isInteractingParam, true);
-        } else {
-             animate.SetBool(isInteractingParam, false);
-        }
+        }*/
 
     }
 
@@ -135,8 +155,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         if (moveHorizontal > 0.1f || moveHorizontal < -0.1f)
         {
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
@@ -145,20 +164,50 @@ public class PlayerController : MonoBehaviour
             animate.SetBool("isMoving", false);
         }
 
-        if (!isJumping && moveVertical > 0.1f)
+        if (!isJumping && moveVertical > 0.1f && isGrounded)
         {
+            isJumping = true;
+            isGrounded = false;
             rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2D.Impulse);
-            
+            audioManager.PlaySFX(audioManager.jumpSound); // Tocar som de pulo
         }
 
 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
+        
     {
         if (collision.gameObject.tag == "Platform")
         {
-            isJumping = false;
+            isGrounded = true;
+
+            if (isJumping)
+            {
+                isJumping = false;
+                audioManager.PlaySFX(audioManager.jumpLand);
+            }
+
+        /*} else if (collision.gameObject.tag == "Wall"){
+            Debug.Log("PAREDE");
+            if(hasPickaxe && Input.GetKeyDown(KeyCode.E)){
+                isPickaxeHit = true;
+                Debug.Log("isPickaxeHit" + isPickaxeHit + "ATIVEI");
+                //AnimationPickAxe();
+            } 
+        } else if (collision.gameObject.tag == "WoodWall"){
+            if(hasAxe && Input.GetKeyDown(KeyCode.E)){
+                Debug.Log("ATIVEI WOOD");
+                isAxeHit = true;
+                AnimationAxe();
+            } */
+        } else if (collision.gameObject.tag == "PickAxe" || collision.gameObject.tag == "Axe" || collision.gameObject.tag == "Core"){
+            //Debug.Log("OBJECTO");
+            if (Input.GetKeyDown(KeyCode.E)){
+                animate.SetBool(isInteractingParam, true);
+            } else {
+                animate.SetBool(isInteractingParam, false);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D collision)
@@ -166,6 +215,37 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             isJumping = true;
+            isGrounded = false;
+
+        } else if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("APANHEI PAREDE");
+            
+            if (isPickaxeHit){
+
+                if (gameObject.GetComponent<Inventory>().VerifyItem("Pickaxe")){
+                    hasPickaxe = true;
+                } else {
+                    hasPickaxe = false;
+                }
+                
+                isPickaxeHit = false;
+                animate.SetBool("isPickaxeHit", false);
+
+            }
+        } else if (collision.gameObject.tag == "Wood Wall")
+        {
+            if (isAxeHit){
+                if (gameObject.GetComponent<Inventory>().VerifyItem("Pickaxe")){
+                    hasAxe = true;
+                } else {
+                    hasAxe = false;
+                }
+                
+                isAxeHit = false; 
+                animate.SetBool("isAxeHit", false);
+
+            }
         }
     }
 
@@ -189,12 +269,41 @@ public class PlayerController : MonoBehaviour
         {
             animate.SetBool("isJumping", false);
             animate.SetBool("isFalling", true);
+
         }
         else
         {
             animate.SetBool("isJumping", false);
             animate.SetBool("isFalling", false);
         }
+    }
+
+    public IEnumerator AnimationPickAxe(Action onCompleted)
+    {
+        animate.SetBool("isPickaxeHit", true);
+        audioManager.PlaySFX(audioManager.pickaxeSound);
+        //Debug.Log("ANIMAÇÃO - INICIO");
+
+        yield return new WaitForSeconds(1);  // Supõe que a animação dura 1 segundo
+
+        animate.SetBool("isPickaxeHit", false);
+        //Debug.Log("ANIMAÇÃO - FIM");
+
+        onCompleted?.Invoke();
+    }
+
+        public IEnumerator AnimationAxe(Action onCompleted)
+    {
+        animate.SetBool("isAxeHit", true);
+        //Debug.Log("ANIMAÇÃO - INICIO");
+        audioManager.PlaySFX(audioManager.axeSound);
+
+        yield return new WaitForSeconds(1);  // Supõe que a animação dura 1 segundo
+
+        animate.SetBool("isAxeHit", false);
+        //Debug.Log("ANIMAÇÃO - FIM");
+
+        onCompleted?.Invoke();
     }
 
 }

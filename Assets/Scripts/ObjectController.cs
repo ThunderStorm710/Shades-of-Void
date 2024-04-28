@@ -14,7 +14,6 @@ public class ObjectController : MonoBehaviour
 
 
 
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -38,17 +37,28 @@ public class ObjectController : MonoBehaviour
             if (playerController.hasPickaxe && gameObject.tag == "Wall")
             {
                 Debug.Log("Parede a desaparecer.");
-                gameObject.SetActive(false);
-                player.GetComponent<PlayerController>().hasPickaxe = false;
-                inventory.RemoveItem("Pickaxe");
+                StartCoroutine(playerController.AnimationPickAxe(() =>
+                {
+                    // Desativa o gameObject da parede após a animação
+                    gameObject.SetActive(false);
 
-
+                    // Atualiza o estado da picareta e remove do inventário
+                    inventory.VerifyItem("Pickaxe");
+                    inventory.RemoveItem("Pickaxe");
+                }));
             }
+
             else if (playerController.hasAxe && gameObject.tag == "Wood Wall") {
-                Debug.Log("Parede de madeira a desaparecer.");
-                gameObject.SetActive(false);
-                player.GetComponent<PlayerController>().hasAxe = false;
-                inventory.RemoveItem("Axe");
+                StartCoroutine(playerController.AnimationAxe(() =>
+                {
+                    Debug.Log("Parede de madeira a desaparecer.");
+
+                    gameObject.SetActive(false);
+
+                    // Atualiza o estado da picareta e remove do inventário
+                    inventory.VerifyItem("Axe");
+                    inventory.RemoveItem("Axe");
+                }));
 
 
             }
@@ -60,18 +70,9 @@ public class ObjectController : MonoBehaviour
             }
 
             if (gameObject.tag != "Wall" && gameObject.tag != "Wood Wall") { 
-
-                for (int i = 0; i < inventory.slots.Length; i++)
-                {
-                    if (inventory.isFull[i] == false)
-                    {
-                        inventory.AddItem(itemButton, gameObject.name);
-                        player.GetComponent<PlayerController>().ObtainObject(gameObject);
-
-                        Destroy(gameObject);
-                        break;
-                    }
-                }
+                inventory.AddItem(itemButton, gameObject.name);
+                player.GetComponent<PlayerController>().ObtainObject(gameObject);
+                //Destroy(gameObject);
                 PlayerPickUp();
             }
             
@@ -99,8 +100,9 @@ public class ObjectController : MonoBehaviour
     void PlayerPickUp()
     {
         playerAnimator.SetTrigger("isObject");
-
+        //playerAnimator.SetBool("isInteracting", true);
         Invoke("ResetPickUpAnimation", 1.0f);
+        //playerAnimator.SetTrigger("isInteracting", false);
         Destroy(gameObject);
     }
 

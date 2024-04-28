@@ -8,6 +8,8 @@ public class LevelEndTrigger : MonoBehaviour
     public string requiredItemName = "Core";
 
     private GameObject player;
+    public GameObject endGame;
+
     private PlayerController playerController;
 
     void Start()
@@ -18,6 +20,10 @@ public class LevelEndTrigger : MonoBehaviour
             playerController = player.GetComponent<PlayerController>();
         }
 
+    }
+
+    void Update(){
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,6 +47,10 @@ public class LevelEndTrigger : MonoBehaviour
     private void EndLevelWithVictory()
     {
         Debug.Log("Victory! Level completed.");
+        Time.timeScale = 0f;
+        endGame.SetActive(true);
+
+
         // Here, you can load a new scene or show a victory message.
         // Example: SceneManager.LoadScene("VictoryScene");
     }

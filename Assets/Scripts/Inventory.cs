@@ -8,7 +8,9 @@ public class Inventory : MonoBehaviour
     public bool[] isFull;
     public GameObject[] slots;
 
-    private GameObject[] slotsAux;
+    public Slot[] slotsReais;
+
+    public GameObject[] slotsAux;
     void Start()
     {
         slotsAux = new GameObject[4];
@@ -28,15 +30,15 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(GameObject item, string itemName)
     {
-        // Encontre o primeiro slot vazio no inventário
+        // Encontre o primeiro slot vazio no inventï¿½rio
         for (int i = 0; i < isFull.Length; i++)
         {
             if (isFull[i] == false)
             {
                 isFull[i] = true; // Marque o slot como cheio
-                slots[i] = Instantiate(item, slots[i].transform, false); // Crie o ícone do item no slot
+                slots[i] = Instantiate(item, slots[i].transform, false); // Crie o ï¿½cone do item no slot
                 slots[i].name = itemName; // Atualize o nome do slot para refletir o item
-
+                slots[i].SetActive(true);
                 Debug.Log($"Slot ({i + 1}) {itemName}"); // Log com o nome atualizado
                 break;
             }
@@ -54,40 +56,67 @@ public class Inventory : MonoBehaviour
             if (slots[i] != null && slots[i].name == itemName && isFull[i] == true)
             {
                 isFull[i] = false;
-                Destroy(slots[i]);  // Destruir o ícone visual do item
+                //Debug.Log("POTETU"  + slots[i].GetComponent<Slot>().name);
+                slotsReais[i].removerFilhos();
+                //slots[i].GetComponent<Slot>().removerFilhos();
                 slots[i] = slotsAux[i];
                 indexToRemove = i;
                 break;
             }
         }
-        if (indexToRemove != -1)
+       /* if (indexToRemove != -1)
         {
             UpdateUI(indexToRemove);
-        }
+        }*/
     }
 
-    public void UpdateUI(int startIndex)
-    {
-        // Deslocar todos os itens para a esquerda a partir do índice startIndex
-        for (int i = startIndex; i < slots.Length - 1; i++)
+    public bool VerifyItem(string name){
+        Debug.Log("VERIFIQUEI");
+       for (int i = 0; i < slots.Length; i++)
         {
-            if (isFull[i + 1] == false)
+            if (slots[i] != null && slots[i].name == name && isFull[i] == true)
             {
-                break; // Se o próximo slot não estiver cheio, pare o loop
-            }
-            else
-            {
-                slots[i] = slots[i + 1]; // Mover o ícone para a esquerda
-                isFull[i] = isFull[i + 1];
-                slots[i + 1] = slotsAux[i + 1];
-                isFull[i + 1] = false;
-            }
+                return true;
+            } 
+        }
+        return false;
+    }
 
-            /*if (slots[i] != null)
+public void UpdateUI(int startIndex)
+{
+    // Deslocar todos os itens para a esquerda a partir do Ã­ndice startIndex
+    for (int i = startIndex; i < slots.Length - 1; i++)
+    {
+        if (isFull[i + 1] == false)
+        {
+            break; // Se o prÃ³ximo slot nÃ£o estiver cheio, pare o loop
+        }
+        else
+        {
+            // Mover o conteÃºdo para a esquerda
+            slots[i] = slots[i + 1];
+            isFull[i] = isFull[i + 1];
+
+            // Limpar o slot onde o item foi movido
+            slots[i + 1] = null;
+            isFull[i + 1] = false;
+
+            // Atualizar a posiÃ§Ã£o na UI, se o slot nÃ£o for nulo
+            if (slots[i] != null)
             {
-                slots[i].transform.position = slots[i].transform.parent.GetChild(i).position;
-            }*/
+                slots[i].transform.position = 
+                    slots[i].transform.parent.GetChild(i).position;
+            }
         }
     }
+
+    // Opcional: atualizar o Ãºltimo slot na UI
+    if (slots[slots.Length - 1] != null)
+    {
+        slots[slots.Length - 1].transform.position = 
+            slots[slots.Length - 1].transform.parent.GetChild(slots.Length - 1).position;
+    }
+}
+
 
 }
