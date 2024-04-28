@@ -970,7 +970,6 @@ GameObject:
   m_Component:
   - component: {fileID: 68165052}
   - component: {fileID: 68165053}
-  - component: {fileID: 68165054}
   m_Layer: 0
   m_Name: 07_Forest (1)
   m_TagString: Untagged
@@ -1047,22 +1046,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &68165054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68165051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &87792745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1232,6 @@ GameObject:
   m_Component:
   - component: {fileID: 122850117}
   - component: {fileID: 122850118}
-  - component: {fileID: 122850119}
   m_Layer: 0
   m_Name: 07_Forest (2)
   m_TagString: Untagged
@@ -1326,22 +1308,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &122850119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122850116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &128280556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1318,6 @@ GameObject:
   m_Component:
   - component: {fileID: 128280557}
   - component: {fileID: 128280558}
-  - component: {fileID: 128280559}
-  - component: {fileID: 128280560}
   m_Layer: 0
   m_Name: 06_Particles
   m_TagString: Untagged
@@ -1433,35 +1397,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &128280559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128280556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.6
---- !u!114 &128280560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128280556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1001 &132614742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2169,7 +2104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213038349}
   - component: {fileID: 213038351}
-  - component: {fileID: 213038350}
   m_Layer: 0
   m_Name: 02_Forest (3)
   m_TagString: Untagged
@@ -2192,22 +2126,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 271306326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &213038350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213038348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &213038351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2405,8 +2323,6 @@ GameObject:
   m_Component:
   - component: {fileID: 215914133}
   - component: {fileID: 215914134}
-  - component: {fileID: 215914135}
-  - component: {fileID: 215914136}
   m_Layer: 0
   m_Name: 05_Forest
   m_TagString: Untagged
@@ -2486,35 +2402,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &215914135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215914132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.7
---- !u!114 &215914136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215914132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &254789882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,8 +2716,6 @@ GameObject:
   m_Component:
   - component: {fileID: 271306326}
   - component: {fileID: 271306327}
-  - component: {fileID: 271306328}
-  - component: {fileID: 271306329}
   m_Layer: 0
   m_Name: 02_Forest
   m_TagString: Untagged
@@ -2910,35 +2795,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &271306328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271306325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 1
---- !u!114 &271306329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271306325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &276361369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,7 +3326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 337720637}
   - component: {fileID: 337720638}
-  - component: {fileID: 337720639}
   m_Layer: 0
   m_Name: 04_Forest (1)
   m_TagString: Untagged
@@ -3547,22 +3402,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &337720639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337720636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &352610810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4394,7 +4233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 517883758}
   - component: {fileID: 517883760}
-  - component: {fileID: 517883759}
   m_Layer: 0
   m_Name: 05_Forest (3)
   m_TagString: Untagged
@@ -4417,22 +4255,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 215914133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &517883759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517883757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &517883760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4669,7 +4491,6 @@ GameObject:
   m_Component:
   - component: {fileID: 552606079}
   - component: {fileID: 552606080}
-  - component: {fileID: 552606081}
   m_Layer: 0
   m_Name: 04_Forest (2)
   m_TagString: Untagged
@@ -4746,22 +4567,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &552606081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552606078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &583240094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,7 +5498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 703786142}
   - component: {fileID: 703786143}
-  - component: {fileID: 703786144}
   m_Layer: 0
   m_Name: 01_Sky (2)
   m_TagString: Untagged
@@ -5770,22 +5574,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &703786144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703786141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &710023506
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,7 +6640,6 @@ GameObject:
   m_Component:
   - component: {fileID: 797636579}
   - component: {fileID: 797636580}
-  - component: {fileID: 797636581}
   m_Layer: 0
   m_Name: 01_Sky (1)
   m_TagString: Untagged
@@ -6929,22 +6716,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &797636581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797636578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &832572287
 GameObject:
   m_ObjectHideFlags: 0
@@ -6955,8 +6726,6 @@ GameObject:
   m_Component:
   - component: {fileID: 832572288}
   - component: {fileID: 832572289}
-  - component: {fileID: 832572290}
-  - component: {fileID: 832572291}
   m_Layer: 0
   m_Name: 04_Forest
   m_TagString: Untagged
@@ -7036,35 +6805,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &832572290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832572287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.8
---- !u!114 &832572291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832572287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &832637225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9983,7 +9723,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1194626273}
   - component: {fileID: 1194626274}
-  - component: {fileID: 1194626275}
   m_Layer: 0
   m_Name: 10_Mist
   m_TagString: Untagged
@@ -10063,19 +9802,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1194626275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194626272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.2
 --- !u!1 &1210331279
 GameObject:
   m_ObjectHideFlags: 0
@@ -10259,7 +9985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1236423146}
   - component: {fileID: 1236423147}
-  - component: {fileID: 1236423148}
   m_Layer: 0
   m_Name: 09_Bushes
   m_TagString: Untagged
@@ -10339,19 +10064,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1236423148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236423145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.3
 --- !u!1 &1266981063
 GameObject:
   m_ObjectHideFlags: 0
@@ -11417,8 +11129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1376833106}
   - component: {fileID: 1376833107}
-  - component: {fileID: 1376833108}
-  - component: {fileID: 1376833109}
   m_Layer: 0
   m_Name: 03_Forest
   m_TagString: Untagged
@@ -11498,35 +11208,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1376833108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376833105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.9
---- !u!114 &1376833109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376833105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1389195204
 GameObject:
   m_ObjectHideFlags: 0
@@ -11708,8 +11389,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1402159888}
   - component: {fileID: 1402159889}
-  - component: {fileID: 1402159890}
-  - component: {fileID: 1402159891}
   m_Layer: 0
   m_Name: 07_Forest
   m_TagString: Untagged
@@ -11789,35 +11468,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1402159890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402159887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.5
---- !u!114 &1402159891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402159887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1402489059
 GameObject:
   m_ObjectHideFlags: 0
@@ -12270,6 +11920,8 @@ MonoBehaviour:
   jumpLand: {fileID: 8300000, guid: 0a5cd6385c7954045953ca5685571d3b, type: 3}
   jumpSound: {fileID: 8300000, guid: 844a44de961a70b4193e9944d2d0128c, type: 3}
   itemEquipment: {fileID: 8300000, guid: 3029948873f5b4b4babd6fa37d5621d4, type: 3}
+  axeSound: {fileID: 0}
+  pickaxeSound: {fileID: 0}
 --- !u!4 &1439138753
 Transform:
   m_ObjectHideFlags: 0
@@ -12741,7 +12393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1505487010}
   - component: {fileID: 1505487011}
-  - component: {fileID: 1505487012}
   m_Layer: 0
   m_Name: 03_Forest (1)
   m_TagString: Untagged
@@ -12818,22 +12469,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1505487012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505487009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1524002315
 GameObject:
   m_ObjectHideFlags: 0
@@ -12844,7 +12479,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1524002316}
   - component: {fileID: 1524002318}
-  - component: {fileID: 1524002317}
   m_Layer: 0
   m_Name: 03_Forest (3)
   m_TagString: Untagged
@@ -12867,22 +12501,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1376833106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524002317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524002315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1524002318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13473,7 +13091,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1614511833}
   - component: {fileID: 1614511835}
-  - component: {fileID: 1614511834}
   m_Layer: 0
   m_Name: 01_Sky (3)
   m_TagString: Untagged
@@ -13496,22 +13113,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1940270075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1614511834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614511832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1614511835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13576,7 +13177,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1650016754}
   - component: {fileID: 1650016755}
-  - component: {fileID: 1650016756}
   m_Layer: 0
   m_Name: 08_Particles
   m_TagString: Untagged
@@ -13656,19 +13256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1650016756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650016753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 0.4
 --- !u!1 &1689613260
 GameObject:
   m_ObjectHideFlags: 0
@@ -13679,7 +13266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1689613261}
   - component: {fileID: 1689613262}
-  - component: {fileID: 1689613263}
   m_Layer: 0
   m_Name: 02_Forest (1)
   m_TagString: Untagged
@@ -13756,22 +13342,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1689613263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689613260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1702179866
 GameObject:
   m_ObjectHideFlags: 0
@@ -16237,7 +15807,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1772870756}
   - component: {fileID: 1772870757}
-  - component: {fileID: 1772870758}
   m_Layer: 0
   m_Name: 05_Forest (1)
   m_TagString: Untagged
@@ -16314,22 +15883,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1772870758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772870755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1774245647
 GameObject:
   m_ObjectHideFlags: 0
@@ -16914,7 +16467,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1842538920}
   - component: {fileID: 1842538921}
-  - component: {fileID: 1842538922}
   m_Layer: 0
   m_Name: 05_Forest (2)
   m_TagString: Untagged
@@ -16991,22 +16543,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1842538922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842538919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1849981390
 GameObject:
   m_ObjectHideFlags: 0
@@ -17017,7 +16553,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1849981391}
   - component: {fileID: 1849981392}
-  - component: {fileID: 1849981393}
   m_Layer: 0
   m_Name: 03_Forest (2)
   m_TagString: Untagged
@@ -17094,22 +16629,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1849981393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849981390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1864712086
 GameObject:
   m_ObjectHideFlags: 0
@@ -17500,7 +17019,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1909031703}
   - component: {fileID: 1909031705}
-  - component: {fileID: 1909031704}
   m_Layer: 0
   m_Name: 04_Forest (3)
   m_TagString: Untagged
@@ -17523,22 +17041,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 832572288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1909031704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909031702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1909031705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17821,8 +17323,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1940270075}
   - component: {fileID: 1940270076}
-  - component: {fileID: 1940270077}
-  - component: {fileID: 1940270078}
   m_Layer: 0
   m_Name: 01_Sky
   m_TagString: Untagged
@@ -17902,35 +17402,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1940270077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940270074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b479c1e0ef7994d8b325eb76e9458d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffect: 1.1
---- !u!114 &1940270078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940270074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1001 &1942088405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18739,7 +18210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1976295396}
   - component: {fileID: 1976295398}
-  - component: {fileID: 1976295397}
   m_Layer: 0
   m_Name: 07_Forest (3)
   m_TagString: Untagged
@@ -18762,22 +18232,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1402159888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1976295397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976295395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1976295398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19405,7 +18859,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2032152834}
   - component: {fileID: 2032152835}
-  - component: {fileID: 2032152836}
   m_Layer: 0
   m_Name: 02_Forest (2)
   m_TagString: Untagged
@@ -19482,22 +18935,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2032152836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032152833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a23fb5baf46f74caffc03f6d234af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &2045787125
 GameObject:
   m_ObjectHideFlags: 0

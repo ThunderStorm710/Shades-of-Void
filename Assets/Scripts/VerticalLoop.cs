@@ -15,6 +15,7 @@ public class VerticalLoop : MonoBehaviour
     void Start()
     {
         startPos = transform.position; // Armazena a posição inicial do objeto
+        Debug.Log(startPos);
     }
 
     void Update()
