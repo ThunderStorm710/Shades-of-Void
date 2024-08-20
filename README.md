@@ -39,6 +39,6 @@ A narrativa do jogo é revelada à medida que o jogador avança pelos níveis. A
 - **Melhoria dos Efeitos Sonoros**: Adição e aprimoramento dos efeitos sonoros para melhorar a imersão.
 
 
-![Estado Final do Jogo 1](images/Estado Final do Jogo.png)
-![Estado Final do Jogo 2](images/Estado Final do Jogo 2.png)
-![Estado Final do Jogo 3](images/Estado Final do Jogo 3.png)
+![Estado Final do Jogo 1](images/Estado1.png)
+![Estado Final do Jogo 2](images/Estado2.png)
+![Estado Final do Jogo 3](images/Estado3.png)
